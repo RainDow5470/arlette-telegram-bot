@@ -28,7 +28,7 @@ def send_welcome(message):
     markup.add(
         InlineKeyboardButton(
             "Заполнить анкету 🤍",
-            web_app=WebAppInfo(url="https://arlette-telegram-bott-cs6h.vercel.app/")
+            web_app=WebAppInfo(url="https://raindow5470.github.io/bot-new/")
         )
     )
 
