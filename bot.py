@@ -13,11 +13,11 @@ bot = telebot.TeleBot(API_TOKEN)
 # Команда /start
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    # Сначала отправляем картинку
+    # Отправляем картинку
     photo_url = "https://i.ibb.co/HLWcrL0b/03-ARL-png.png"
     bot.send_photo(chat_id=message.chat.id, photo=photo_url)
 
-    # Затем отправляем текст с HTML-ссылкой
+    # Текст с HTML-ссылкой и без Telegram-превью
     caption = (
         "Привет! Сейчас ты записываешься на кастинг в Arlette Management 🤍\n\n"
         "Заполни анкету, и мы обязательно рассмотрим твою кандидатуру!\n"
@@ -35,12 +35,13 @@ def send_welcome(message):
         )
     )
 
-    # Отправка текста и кнопки
+    # Текст без превью
     bot.send_message(
         chat_id=message.chat.id,
         text=caption,
         reply_markup=markup,
-        parse_mode="HTML"
+        parse_mode="HTML",
+        disable_web_page_preview=True  # <-- ВОТ ЭТО УБИРАЕТ КАРТОЧКУ
     )
 
 # Обработка анкеты
