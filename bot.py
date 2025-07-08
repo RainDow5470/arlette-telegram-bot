@@ -14,7 +14,7 @@ bot = telebot.TeleBot(API_TOKEN)
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     # Отправляем картинку
-    photo_url = "https://i.ibb.co/HLWcrL0b/03-ARL-png.png"
+    photo_url = "https://i.ibb.co/1f1xBVwz/IMG-9343.png"
     bot.send_photo(chat_id=message.chat.id, photo=photo_url)
 
     # Текст с HTML-ссылкой и без Telegram-превью
